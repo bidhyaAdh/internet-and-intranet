@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" onsubmit="handleSubmit(event)">
+        <h2>Registration Form</h2>
+        
+        <label for="firstName">First name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+        <label for="rollNumber">Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your roll number" required>
+
+        <label for="faculty">Faculty:</label>
+        <input type="text" id="faculty" name="faculty" placeholder="Enter your faculty" required>
+
+        <label for="batch">Batch:</label>
+        <input type="text" id="batch" name="batch" placeholder="Enter your batch" required>
+
+        <div>
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Gather form data
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const dob = document.getElementById("dob").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const rollNumber = document.getElementById("rollNumber").value;
+            const faculty = document.getElementById("faculty").value;
+            const batch = document.getElementById("batch").value;
+
+            // Save data to sessionStorage
+            sessionStorage.setItem("firstName", firstName);
+            sessionStorage.setItem("lastName", lastName);
+            sessionStorage.setItem("dob", dob);
+            sessionStorage.setItem("phoneNumber", phoneNumber);
+            sessionStorage.setItem("rollNumber", rollNumber);
+            sessionStorage.setItem("faculty", faculty);
+            sessionStorage.setItem("batch", batch);
+
+            // Redirect to details page
+            window.location.href = "details.html";
+        }
+    </script>
+</body>
+</html>

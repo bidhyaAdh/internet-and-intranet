@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Completed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .details {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .success-message {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h2>Registration Completed</h2>
+        <p class="success-message">Thank you for registering.</p>
+        <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+        <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+        <p><strong>DOB:</strong> <span id="displayDob"></span></p>
+        <p><strong>Phone Number:</strong> <span id="displayPhoneNumber"></span></p>
+        <p><strong>Roll Number:</strong> <span id="displayRollNumber"></span></p>
+        <p><strong>Faculty:</strong> <span id="displayFaculty"></span></p>
+        <p><strong>Batch:</strong> <span id="displayBatch"></span></p>
+    </div>
+
+    <script>
+        // Retrieve data from sessionStorage
+        document.getElementById("displayFirstName").textContent = sessionStorage.getItem("firstName");
+        document.getElementById("displayLastName").textContent = sessionStorage.getItem("lastName");
+        document.getElementById("displayDob").textContent = sessionStorage.getItem("dob");
+        document.getElementById("displayPhoneNumber").textContent = sessionStorage.getItem("phoneNumber");
+        document.getElementById("displayRollNumber").textContent = sessionStorage.getItem("rollNumber");
+        document.getElementById("displayFaculty").textContent = sessionStorage.getItem("faculty");
+        document.getElementById("displayBatch").textContent = sessionStorage.getItem("batch");
+    </script>
+</body>
+</html>
